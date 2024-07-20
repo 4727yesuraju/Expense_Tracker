@@ -27,7 +27,6 @@ export default function UpdateExpenses({setTrackChange,expense}) {
         }
   }
 
-  console.log(form);
   return (
     <div>
       <button  onClick={()=>document.getElementById(expense._id).showModal()}><GrUpdate /></button>

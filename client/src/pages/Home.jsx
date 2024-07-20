@@ -20,14 +20,12 @@ export default function Home() {
 
   useEffect(()=>{
     let amount = 0;
-     expenses.map(expense=>{
+     expenses?.map(expense=>{
          amount += expense.amount;
      })
      setTotalAmount(amount);
   },[expenses]);
 
-  console.log(expenses);
-  console.log("totalAmout : ",totalAmount);
   return (
     <div className="">
       {loading ? <span className='loading loading-spinner '></span> : <div className="flex flex-col gap-5">

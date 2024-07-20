@@ -30,7 +30,6 @@ export default function CreateExpenses({setTrackChange}) {
     }
   }
 
-  console.log(formData);
   return (
     <div>
       <button className="btn" onClick={()=>document.getElementById('my_modal_3').showModal()}>create new Expense</button>

@@ -49,7 +49,7 @@ export  async function getExpense(req,res){
 
 export  async function getExpenses(req,res){
      try {
-        const expenses =await  Expense.find();
+        const expenses =await  Expense.find({userId:req.user._id});
         res.status(200).json(expenses);
      } catch (error) {
         console.log("Error in createExpense controller : ", error.message);

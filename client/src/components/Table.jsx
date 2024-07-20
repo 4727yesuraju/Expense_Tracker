@@ -39,7 +39,7 @@ export default function Table({setTrackChange}) {
                         }
                         </tr>
                     {
-                 expenses.map((expense,ind)=>{
+                 expenses?.map((expense,ind)=>{
                     return <tr key={ind}>
                         <td>{ind+1}</td>
                         <td>{expense.category}</td>
