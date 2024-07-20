@@ -3,7 +3,7 @@ import CanvasJSReact from '@canvasjs/react-charts';
  
 var CanvasJS = CanvasJSReact.CanvasJS;
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
- 
+
 export default function Chart({expenses}) {
 
     const Expenses = {
@@ -68,70 +68,11 @@ export default function Chart({expenses}) {
             dataPoints:dataPointsForTotalCost
         }]
     }
-    
     return (
     <div className="flex flex-wrap justify-center gap-5">
-
-        <div>
-            <button className="btn" onClick={()=>document.getElementById('showTotalExpenses').showModal()}>showTotalExpenses</button>
-            <dialog id="showTotalExpenses" className="modal">
-                <div className="modal-box">
                     <CanvasJSChart options = {getOptions(dataPointsForTotalCost,"Total Expenses")} 
                     /* onRef={ref => this.chart = ref} */
                     />
-                </div>
-                <form method="dialog" className="modal-backdrop">
-                    <button>close</button>
-                </form>
-            </dialog>
-        </div>
-
-
-        <div>
-            <button className="btn" onClick={()=>document.getElementById('showDailyExpenses').showModal()}>showDailyExpenses</button>
-            <dialog id="showDailyExpenses" className="modal">
-                <div className="modal-box">
-                <CanvasJSChart options = {getOptions(dataPointsForDailyExpenses,"Daily Expenses")} 
-                    /* onRef={ref => this.chart = ref} */
-                />
-                </div>
-                <form method="dialog" className="modal-backdrop">
-                    <button>close</button>
-                </form>
-            </dialog>
-        </div>
-
-        <div>
-            <button className="btn" onClick={()=>document.getElementById('showWeeklyExpenses').showModal()}>showWeeklyExpenses</button>
-            <dialog id="showWeeklyExpenses" className="modal">
-                <div className="modal-box">      
-                    <CanvasJSChart options = {getOptions(dataPointsForWeeklyExpenses,"Weekly Expenses")} 
-                        /* onRef={ref => this.chart = ref} */
-                    />
-                </div>
-                <form method="dialog" className="modal-backdrop">
-                    <button>close</button>
-                </form>
-            </dialog>
-        </div>
-
-        <div>
-            <button className="btn" onClick={()=>document.getElementById('showMonthlyExpenses').showModal()}>showMonthlyExpenses</button>
-            <dialog id="showMonthlyExpenses" className="modal">
-                <div className="modal-box">
-                <CanvasJSChart options = {getOptions(dataPointsForMonthlyExpenses,"Monthly Expenses")} 
-                    /* onRef={ref => this.chart = ref} */
-                />
-                </div>
-                <form method="dialog" className="modal-backdrop">
-                    <button>close</button>
-                </form>
-            </dialog>
-        </div>
-
-        
-
-        
     </div>
     );
 }
