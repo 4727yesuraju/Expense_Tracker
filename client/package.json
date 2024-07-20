@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@canvasjs/react-charts": "^1.0.2",
+    "@rollup/plugin-commonjs": "^26.0.1",
     "expense-tracker": "file:..",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

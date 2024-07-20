@@ -19,9 +19,7 @@ export default function Chart({expenses}) {
     function getDataPoinst(expenses){
         let totalAmount = getTotalAmount(expenses);
         return expenses.map(expense=>{
-            console.log(typeof expense.amount,totalAmount);
             let y = Math.floor((expense.amount/totalAmount)*100);
-            console.log(y)
             return { y  ,label : expense.category};
         })
     }
