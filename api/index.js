@@ -1,5 +1,6 @@
 import express from "express";
-import {config} from 'dotenv';
+import dotenv from 'dotenv';
+dotenv.config();
 import cookieParser from "cookie-parser";
 import path from 'path';
 const __dirname = path.resolve();
@@ -11,7 +12,6 @@ import userRoutes from './routes/user.js';
 import expenseRoutes from './routes/expense.js';
 
 const app = express();
-config();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
