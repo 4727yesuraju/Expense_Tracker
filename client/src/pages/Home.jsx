@@ -5,6 +5,7 @@ import {  useAuthContext } from '../context/AuthContext';
 import Table from '../components/Table';
 import CreateExpenses from '../components/CreateExpenses';
 import CsvDownloadButton from 'react-json-to-csv'
+import Chart from '../components/Chart';
 
 export default function Home() {
 
@@ -35,7 +36,7 @@ export default function Home() {
             <CsvDownloadButton data={expenses} />
           </div>
           <Table setTrackChange={setTrackChange}/>
-         
+          <Chart expenses ={expenses}/>
       </div>
       }
     </div>
