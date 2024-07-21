@@ -6,9 +6,9 @@ function PieChart({expenses}) {
     console.log(expenses)
 
     const totalExpenses = expenses;
-    const dailyExpenses = expenses.filter(expense=>expense.period=='daily');
-    const weeklyExpenses = expenses.filter(expense=>expense.period=='weekly');
-    const monthlyExpenses = expenses.filter(expense=>expense.period=='monthly');
+    const dailyExpenses = expenses?.filter(expense=>expense.period=='daily');
+    const weeklyExpenses = expenses?.filter(expense=>expense.period=='weekly');
+    const monthlyExpenses = expenses?.filter(expense=>expense.period=='monthly');
     const Expenses = {
         totalExpenses,dailyExpenses,weeklyExpenses,monthlyExpenses
     }
@@ -22,28 +22,10 @@ function PieChart({expenses}) {
         return color;
     }
 
-      const [userData, setUserData] = useState({
-        labels: expenses.map((expense) => expense.category),
-        datasets: [
-          {
-            title: {
-                display: true,
-                text: 'Custom Chart Title'
-            },
-            label: "Users Gained",
-            data: expenses.map((expense) => expense.amount),
-            backgroundColor: [
-              ...expenses.map(ex=>getRandomColor())
-            ],
-            borderColor: "black",
-            borderWidth: 2,
-          },
-        ],
-      });
 
       function getData(expenses){
           return {
-            labels: expenses.map((expense) => expense.category),
+            labels: expenses?.map((expense) => expense?.category),
             datasets: [
               {
                 title: {
@@ -51,9 +33,9 @@ function PieChart({expenses}) {
                     text: 'Custom Chart Title'
                 },
                 label: "Users Gained",
-                data: expenses.map((expense) => expense.amount),
+                data: expenses?.map((expense) => expense?.amount),
                 backgroundColor: [
-                  ...expenses.map(ex=>getRandomColor())
+                  ...expenses?.map(ex=>getRandomColor())
                 ],
                 borderColor: "black",
                 borderWidth: 2,
@@ -75,7 +57,7 @@ function PieChart({expenses}) {
       }
   return <div className="flex gap-5 px-10 justify-center flex-wrap">
         {
-            Object.keys(Expenses).map(key=>{
+            Object.keys(Expenses)?.map(key=>{
                 return <div key={key}>
                     <button className="btn" onClick={()=>document.getElementById(key).showModal()}>show {key}</button>
                     <dialog id={key} className="modal">

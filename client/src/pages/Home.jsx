@@ -27,9 +27,10 @@ export default function Home() {
      setTotalAmount(amount);
   },[expenses]);
 
+  console.log("expenses : ",expenses);
   return (
     <div className="">
-      {loading ? <span className='loading loading-spinner '></span> : <div className="flex flex-col gap-5">
+      {expenses && <div className="flex flex-col gap-5">
           <div className="w-full text-center flex justify-between px-8 items-center">
             <CreateExpenses setTrackChange={setTrackChange}/>
             <div>Total Expense : {totalAmount}</div>
