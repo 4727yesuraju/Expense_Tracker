@@ -9,8 +9,8 @@
     "start": "node api/index.js",
     "build": "npm install && npm install --prefix client && npm run build --prefix client",
     "watch": "concurrently \"npm run dev\" \"npm run client\"",
-    "install" :"npm install && npm install --prefix client",
-    "runDev": "concurrently \"npm run intall\" \"npm run watch\""
+    "runInstall": "npm install && npm install concurrently && npm install --prefix client",
+    "runDev": "concurrently \"npm run runInstall\" \"npm run watch\""
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "chart.js": "^4.4.3",
+    "concurrently": "^8.2.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
