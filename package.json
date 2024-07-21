@@ -8,7 +8,9 @@
     "client": "npm run dev --prefix client",
     "start": "node api/index.js",
     "build": "npm install && npm install --prefix client && npm run build --prefix client",
-    "watch": "concurrently \"npm run dev\" \"npm run client\""
+    "watch": "concurrently \"npm run dev\" \"npm run client\"",
+    "install" :"npm install && npm install --prefix client",
+    "runDev": "concurrently \"npm run intall\" \"npm run watch\""
   },
   "keywords": [],
   "author": "",
